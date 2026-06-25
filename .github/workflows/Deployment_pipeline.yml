@@ -1,0 +1,35 @@
+name: Salesforce Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  # ✅ 1. Deploy to DEV
+  deploy-dev:
+    runs-on: ubuntu-22.04
+    environment: TESTORG
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Salesforce CLI
+        run: npm install -g @salesforce/cli
+
+      - name: Authenticate DEV
+        run: |
+          echo "${{ secrets.SFDX_AUTH_TESTORG }}" > auth.txt
+          sf org login sfdx-url --sfdx-url-file auth.txt --alias TESTORG
+
+      - name: Deploy to TESTORG
+        run: |
+          sf project deploy start \
+            --source-dir force-app \
+            --test-level RunLocalTests \
+            --target-org TESTORG \
+            --wait 30
+

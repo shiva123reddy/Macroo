@@ -1,0 +1,570 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": ".",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "64.0",
+  "replacements": [
+    {
+      "glob": "force-app/main/default/connectedApps/*.connectedApp-meta.xml",
+      "stringToReplace": ">InstanceUrl",
+      "replaceWithEnv": "INSTANCEURL"
+    },
+    {
+      "glob": "force-app/main/default/customMetadata/NusIntegrationUtils.*.md-meta.xml",
+      "stringToReplace": "CONSUMERKEY",
+      "replaceWithEnv": "target_consumerkey"
+    },
+    {
+      "glob": "force-app/main/default/networks/*.network-meta.xml",
+      "stringToReplace": ">INSTANCEURL",
+      "replaceWithEnv": "INSTANCEURL"
+    },
+     {
+      "filename": "force-app/main/default/networks/NUS NG Application Portal.network-meta.xml",
+      "stringToReplace": "OrgWideAddress",
+      "replaceWithEnv": "OrgWideAddress"
+    },
+     {
+      "filename": "force-app/main/default/networks/NUS Partner University Nomination Portal.network-meta.xml",
+      "stringToReplace": "OrgWideAddress",
+      "replaceWithEnv": "OrgWideAddress"
+    },
+    {
+      "filename": "force-app/main/default/networks/NUS FAQ Portal.network-meta.xml",
+      "stringToReplace": "Logout_URL_FAQ",
+      "replaceWithEnv": "Logout_URL_FAQ"
+    },
+    {
+      "filename": "force-app/main/default/networks/NUS Onboarding Portal.network-meta.xml",
+      "stringToReplace": "Logout_URL_ONBOARDING",
+      "replaceWithEnv": "Logout_URL_ONBOARDING"
+    },
+    {
+      "glob": "force-app/main/default/networks/*.network-meta.xml",
+      "stringToReplace": "emailSenderName_site",
+      "replaceWithEnv": "emailSenderName_site"
+    },
+    {
+      "glob": "force-app/main/default/sites/*.site-meta.xml",
+      "stringToReplace": "SiteOwner",
+      "replaceWithEnv": "SiteOwner"
+    },
+    {
+      "glob": "force-app/main/default/externalClientApps/*.eca-meta.xml",
+      "stringToReplace": "IntegrationContactEmail",
+      "replaceWithEnv": "IntegrationContactEmail"
+    },
+    {
+      "glob": "force-app/main/default/extlClntAppOauthPolicies/*.ecaOauthPlcy-meta.xml",
+      "stringToReplace": ">IntegrationUsername",
+      "replaceWithEnv": "IntegrationUsername"
+    },
+    {
+      "glob": "force-app/main/default/extlClntAppGlobalOauthSets/*.ecaGlblOauth-meta.xml",
+      "stringToReplace": ">CallbackURL",
+      "replaceWithEnv": "CallbackURL"
+    },
+    {
+      "filename": "force-app/main/default/extlClntAppGlobalOauthSets/Univus_Integration_glbloauth.ecaGlblOauth-meta.xml",
+      "stringToReplace": "CallbackUnivusAppURL",
+      "replaceWithEnv": "CallbackUnivusAppURL"
+    },
+    {
+      "filename": "force-app/main/default/extlClntAppGlobalOauthSets/NUS_Integration_App_glbloauth.ecaGlblOauth-meta.xml",
+      "stringToReplace": "BOOMI_PLATFORM_CALLBACKURL",
+      "replaceWithEnv": "BOOMI_PLATFORM_CALLBACKURL"
+    },
+    {
+      "glob": "force-app/main/default/authproviders/*.xml",
+      "stringToReplace": "Auth_execution_User",
+      "replaceWithEnv": "Auth_execution_User"
+    },
+    {
+      "glob": "force-app/main/default/dashboards/**/*.xml",
+      "stringToReplace": "DashboardOwner",
+      "replaceWithEnv": "DashboardOwner_RunningUser"
+    },
+    {
+      "glob": "force-app/main/default/quickActions/*.quickAction-meta.xml",
+      "stringToReplace": "Routing_Address_Email",
+      "replaceWithEnv": "Routing_Address_Email"
+    },
+    {
+      "filename": "force-app/main/default/settings/Case.settings-meta.xml",
+      "stringToReplace": "Routing_Address_Email",
+      "replaceWithEnv": "Routing_Address_Email"
+    },
+    {
+      "filename": "force-app/main/default/digitalExperiences/site/DEP_Landing_Page1/sfdc_cms__appPage/mainAppPage/content.json",
+        "stringToReplace": "GTMContainerID",
+        "replaceWithEnv": "GTMContainerID"
+    },
+    {
+      "filename": "force-app/main/default/lwc/nusLogoCmp/nusLogoCmp.html",
+      "stringToReplace": "GTMContainerHTMLID",
+      "replaceWithEnv": "GTMContainerHTMLID"
+    },
+    {
+      "glob": "force-app/main/default/dashboards/**/*.dashboard-meta.xml",
+      "stringToReplace": "DashboardRunningUser",
+      "replaceWithEnv": "DashboardOwner_RunningUser"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/CustomAuthProvider.Microsoft.md-meta.xml",
+      "stringToReplace": "AUTH_URL",
+      "replaceWithEnv": "AUTH_URL"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/CustomAuthProvider.Microsoft.md-meta.xml",
+      "stringToReplace": "CONSUMER_KEY",
+      "replaceWithEnv": "CONSUMER_KEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/CustomAuthProvider.Microsoft.md-meta.xml",
+      "stringToReplace": "CONSUMER_SECRET",
+      "replaceWithEnv": "CONSUMER_SECRET"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/CustomAuthProvider.Microsoft.md-meta.xml",
+      "stringToReplace": "POLICY",
+      "replaceWithEnv": "POLICY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/CustomAuthProvider.Microsoft.md-meta.xml",
+      "stringToReplace": "TOKEN_URL",
+      "replaceWithEnv": "TOKEN_URL"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.UnivusOnboardingIntegration.md-meta.xml",
+      "stringToReplace": "UNIVUS_Endpoint",
+      "replaceWithEnv": "UNIVUS_Endpoint"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.UnivusOnboardingIntegration.md-meta.xml",
+      "stringToReplace": "UNIVUS_AppId",
+      "replaceWithEnv": "UNIVUS_AppId"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.UnivusOnboardingIntegration.md-meta.xml",
+      "stringToReplace": "UNIVUS_Univus XAuthen",
+      "replaceWithEnv": "UNIVUS_Univus XAuthen"
+    },
+     {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.UnivusOnboardingIntegration.md-meta.xml",
+      "stringToReplace": "UNIVUS_Certificate Name",
+      "replaceWithEnv": "UNIVUS_Certificate Name"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/CustomAuthProvider.Microsoft.md-meta.xml",
+      "stringToReplace": "Logout_URL_FAQ",
+      "replaceWithEnv": "Logout_URL_FAQ"
+    },
+    {
+      "filename": "force-app/main/default/authproviders/Microsoft.authprovider-meta.xml",
+      "stringToReplace": "AUTH_URL",
+      "replaceWithEnv": "AUTH_URL"
+    },
+    {
+      "filename": "force-app/main/default/authproviders/Microsoft.authprovider-meta.xml",
+      "stringToReplace": "CONSUMER_KEY",
+      "replaceWithEnv": "CONSUMER_KEY"
+    },
+    {
+      "filename": "force-app/main/default/authproviders/Microsoft.authprovider-meta.xml",
+      "stringToReplace": "CONSUMER_SECRET",
+      "replaceWithEnv": "CONSUMER_SECRET"
+    },
+    {
+      "filename": "force-app/main/default/authproviders/Microsoft.authprovider-meta.xml",
+      "stringToReplace": "AZURE_AUTH_EXECUTION_USER",
+      "replaceWithEnv": "AZURE_AUTH_EXECUTION_USER"
+    },
+    {
+      "filename": "force-app/main/default/authproviders/Microsoft.authprovider-meta.xml",
+      "stringToReplace": "TOKEN_URL",
+      "replaceWithEnv": "TOKEN_URL"
+    },
+    {
+      "filename": "force-app/main/default/authproviders/Microsoft.authprovider-meta.xml",
+      "stringToReplace": "LOGOUT_URL",
+      "replaceWithEnv": "LOGOUT_URL"
+    },
+    {
+      "filename": "force-app/main/default/PlatformEventSubscriberConfigs/StudentServiceIndicator.platformEventSubscriberConfig-meta.xml",
+      "stringToReplace": ">IntegrationUsername",
+      "replaceWithEnv": "IntegrationUsername"
+    },
+    {
+      "filename": "force-app/main/default/PlatformEventSubscriberConfigs/StudentLearnerProgram.platformEventSubscriberConfig-meta.xml",
+      "stringToReplace": ">IntegrationUsername",
+      "replaceWithEnv": "IntegrationUsername"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.EdurecStudentInfoTest.md-meta.xml",
+      "stringToReplace": "EDUREC_STUDENTINFO_AUTHTOKEN",
+      "replaceWithEnv": "EDUREC_STUDENTINFO_AUTHTOKEN"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.EdurecStudentInfoTest.md-meta.xml",
+      "stringToReplace": "EDUREC_STUDENTINFO_ENDPOINT",
+      "replaceWithEnv": "EDUREC_STUDENTINFO_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.EdurecStudentInfoTest.md-meta.xml",
+      "stringToReplace": "EDUREC_STUDENTINFO_XAPIKEY",
+      "replaceWithEnv": "EDUREC_STUDENTINFO_XAPIKEY" 
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.EdurecIntegrationTest.md-meta.xml",
+      "stringToReplace": "EDUREC_LOA_XAPPKEY",
+      "replaceWithEnv": "EDUREC_LOA_XAPPKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.EdurecIntegrationTest.md-meta.xml",
+      "stringToReplace": "EDUREC_LOA_ENDPOINT",
+      "replaceWithEnv": "EDUREC_LOA_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.EdurecIntegrationTest.md-meta.xml",
+      "stringToReplace": "EDUREC_LOA_XAPIKEY",
+      "replaceWithEnv": "EDUREC_LOA_XAPIKEY"
+    },
+    {
+      "filename": "force-app/main/default/remoteSiteSettings/Ecoll_Integration.remoteSite-meta.xml",
+      "stringToReplace": "ECOLLURL",
+      "replaceWithEnv": "ECOLLURL"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Ack_Onboarding.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ACK_ONBOARDING_ENDPOINT",
+      "replaceWithEnv": "ESB_INTEGRATION_ACK_ONBOARDING_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Ack_Onboarding.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ACK_ONBOARDING_APPKEY",
+      "replaceWithEnv": "ESB_INTEGRATION_ACK_ONBOARDING_APPKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Ack_Onboarding.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ACK_ONBOARDING_HASHKEY",
+      "replaceWithEnv": "ESB_INTEGRATION_ACK_ONBOARDING_HASHKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Ack_Onboarding.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ACK_ONBOARDING_XECOLLSUBAPI",
+      "replaceWithEnv": "ESB_INTEGRATION_ACK_ONBOARDING_XECOLLSUBAPI"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Onboarding.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ONBOARDING_ENDPOINT",
+      "replaceWithEnv": "ESB_INTEGRATION_ONBOARDING_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Onboarding.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ONBOARDING_APPKEY",
+      "replaceWithEnv": "ESB_INTEGRATION_ONBOARDING_APPKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Onboarding.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ONBOARDING_HASHKEY",
+      "replaceWithEnv": "ESB_INTEGRATION_ONBOARDING_HASHKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Onboarding.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ONBOARDING_XECOLLSUBAPI",
+      "replaceWithEnv": "ESB_INTEGRATION_ONBOARDING_XECOLLSUBAPI"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Onboarding.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ONBOARDING_TRANSACTIONTYPE",
+      "replaceWithEnv": "ESB_INTEGRATION_ONBOARDING_TRANSACTIONTYPE"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.Ecoll_Integration_Onboarding.md-meta.xml",
+      "stringToReplace": "ECOLL_INTEGRATION_ONBOARDING_ENDPOINT",
+      "replaceWithEnv": "ECOLL_INTEGRATION_ONBOARDING_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.Ecoll_Integration_Onboarding.md-meta.xml",
+      "stringToReplace": "ECOLL_INTEGRATION_ONBOARDING_APPKEY",
+      "replaceWithEnv": "ECOLL_INTEGRATION_ONBOARDING_APPKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.Ecoll_Integration_Onboarding.md-meta.xml",
+      "stringToReplace": "ECOLL_INTEGRATION_ONBOARDING_HASHKEY",
+      "replaceWithEnv": "ECOLL_INTEGRATION_ONBOARDING_HASHKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.Ecoll_Integration_Onboarding.md-meta.xml",
+      "stringToReplace": "ECOLL_INTEGRATION_ONBOARDING_XECOLLSUBAPI",
+      "replaceWithEnv": "ECOLL_INTEGRATION_ONBOARDING_XECOLLSUBAPI"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.Ecoll_Integration_Onboarding.md-meta.xml",
+      "stringToReplace": "ECOLL_INTEGRATION_ONBOARDING_TRANSACTIONTYPE",
+      "replaceWithEnv": "ECOLL_INTEGRATION_ONBOARDING_TRANSACTIONTYPE"
+    },
+    {
+      "filename": "force-app/main/default/namedCredentials/Boomi_Integration_Service_for_Photos.namedCredential-meta.xml",
+      "stringToReplace": "UGCC_BOOMI_INTEGRATION_SERVICE_URL",
+      "replaceWithEnv": "UGCC_BOOMI_INTEGRATION_SERVICE_URL"
+    },
+    {
+      "filename": "force-app/main/default/namedCredentials/Boomi_Integration_Service_for_Photos.namedCredential-meta.xml",
+      "stringToReplace": "UGCC_BOOMI_INTEGRATION_SERVICE_API_KEY",
+      "replaceWithEnv": "UGCC_BOOMI_INTEGRATION_SERVICE_API_KEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.SingpassIntegration.md-meta.xml",
+      "stringToReplace": "SINGPASS_INTEGRATION_NG_ENDPOINT",
+      "replaceWithEnv": "SINGPASS_INTEGRATION_NG_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.SingpassIntegration.md-meta.xml",
+      "stringToReplace": "SINGPASS_INTEGRATION_NG_CLIENTID",
+      "replaceWithEnv": "SINGPASS_INTEGRATION_NG_CLIENTID"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.SingpassIntegration.md-meta.xml",
+      "stringToReplace": "SINGPASS_INTEGRATION_NG_CLIENTSECRET",
+      "replaceWithEnv": "SINGPASS_INTEGRATION_NG_CLIENTSECRET"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.SingpassPerson.md-meta.xml",
+      "stringToReplace": "SINGPASS_PERSON_INTEGRATION_NG_ENDPOINT",
+      "replaceWithEnv": "SINGPASS_PERSON_INTEGRATION_NG_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.SingpassPerson.md-meta.xml",
+      "stringToReplace": "SINGPASS_INTEGRATION_NG_CLIENTID",
+      "replaceWithEnv": "SINGPASS_INTEGRATION_NG_CLIENTID"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.SingpassPerson.md-meta.xml",
+      "stringToReplace": "SINGPASS_INTEGRATION_NG_CLIENTSECRET",
+      "replaceWithEnv": "SINGPASS_INTEGRATION_NG_CLIENTSECRET"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozInitializeCall.md-meta.xml",
+      "stringToReplace": "ZOLOZ_INTEGRATION_NG_CLIENTIDKEY",
+      "replaceWithEnv": "ZOLOZ_INTEGRATION_NG_CLIENTIDKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozInitializeCall.md-meta.xml",
+      "stringToReplace": "ZOLOZ_INTEGRATION_NG_PUBLICKEY",
+      "replaceWithEnv": "ZOLOZ_INTEGRATION_NG_PUBLICKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozInitializeCall.md-meta.xml",
+      "stringToReplace": "ZOLOZ_INTEGRATION_NG_DOCID",
+      "replaceWithEnv": "ZOLOZ_INTEGRATION_NG_DOCID"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozInitializeCall.md-meta.xml",
+      "stringToReplace": "ZOLOZ_INITIALIZE_INTEGRATION_NG_ENDPOINTAPI",
+      "replaceWithEnv": "ZOLOZ_INITIALIZE_INTEGRATION_NG_ENDPOINTAPI"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozInitializeCall.md-meta.xml",
+      "stringToReplace": "ZOLOZ_INITIALIZE_INTEGRATION_NG_RESTFULPATH",
+      "replaceWithEnv": "ZOLOZ_INITIALIZE_INTEGRATION_NG_RESTFULPATH"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozInitializeCall.md-meta.xml",
+      "stringToReplace": "ZOLOZ_INITIALIZE_INTEGRATION_NG_REDIRECTURL",
+      "replaceWithEnv": "ZOLOZ_INITIALIZE_INTEGRATION_NG_REDIRECTURL"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozCheckResult.md-meta.xml",
+      "stringToReplace": "ZOLOZ_CHECK_INTEGRATION_NG_ENDPOINT",
+      "replaceWithEnv": "ZOLOZ_CHECK_INTEGRATION_NG_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozCheckResult.md-meta.xml",
+      "stringToReplace": "ZOLOZ_CHECK_INTEGRATION_NG_RESTFULPATH",
+      "replaceWithEnv": "ZOLOZ_CHECK_INTEGRATION_NG_RESTFULPATH"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozCheckResult.md-meta.xml",
+      "stringToReplace": "ZOLOZ_INTEGRATION_NG_CLIENTIDKEY",
+      "replaceWithEnv": "ZOLOZ_INTEGRATION_NG_CLIENTIDKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozCheckResult.md-meta.xml",
+      "stringToReplace": "ZOLOZ_INTEGRATION_NG_PUBLICKEY",
+      "replaceWithEnv": "ZOLOZ_INTEGRATION_NG_PUBLICKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozDocumentUpload.md-meta.xml",
+      "stringToReplace": "ZOLOZ_UPLOAD_INTEGRATION_NG_ENDPOINT",
+      "replaceWithEnv": "ZOLOZ_UPLOAD_INTEGRATION_NG_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozDocumentUpload.md-meta.xml",
+      "stringToReplace": "ZOLOZ_UPLOAD_INTEGRATION_NG_RESTFULPATH",
+      "replaceWithEnv": "ZOLOZ_UPLOAD_INTEGRATION_NG_RESTFULPATH"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozDocumentUpload.md-meta.xml",
+      "stringToReplace": "ZOLOZ_INTEGRATION_NG_CLIENTIDKEY",
+      "replaceWithEnv": "ZOLOZ_INTEGRATION_NG_CLIENTIDKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozDocumentUpload.md-meta.xml",
+      "stringToReplace": "ZOLOZ_INTEGRATION_NG_PUBLICKEY",
+      "replaceWithEnv": "ZOLOZ_INTEGRATION_NG_PUBLICKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ZolozDocumentUpload.md-meta.xml",
+      "stringToReplace": "ZOLOZ_INTEGRATION_NG_DOCID",
+      "replaceWithEnv": "ZOLOZ_INTEGRATION_NG_DOCID"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.NGQuotaIntegrationProd.md-meta.xml",
+      "stringToReplace": "QUOTA_INTEGRATION_NG_ENDPOINT",
+      "replaceWithEnv": "QUOTA_INTEGRATION_NG_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.NGQuotaIntegrationProd.md-meta.xml",
+      "stringToReplace": "QUOTA_INTEGRATION_NG_XAPI",
+      "replaceWithEnv": "QUOTA_INTEGRATION_NG_XAPI"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.NGQuotaIntegrationProd.md-meta.xml",
+      "stringToReplace": "QUOTA_INTEGRATION_NG_CLIENTSECRET",
+      "replaceWithEnv": "QUOTA_INTEGRATION_NG_CLIENTSECRET"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.NGCourseEnrolmentProd.md-meta.xml",
+      "stringToReplace": "COURSE_ENROL_INTEGRATION_NG_ENDPOINT",
+      "replaceWithEnv": "COURSE_ENROL_INTEGRATION_NG_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.NGCourseEnrolmentProd.md-meta.xml",
+      "stringToReplace": "QUOTA_INTEGRATION_NG_CLIENTSECRET",
+      "replaceWithEnv": "QUOTA_INTEGRATION_NG_CLIENTSECRET"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.NGCourseEnrolmentProd.md-meta.xml",
+      "stringToReplace": "COURSE_ENROL_INTEGRATION_NG_XAPI",
+      "replaceWithEnv": "COURSE_ENROL_INTEGRATION_NG_XAPI"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.NGApplicationProd.md-meta.xml",
+      "stringToReplace": "NGAPPLICATION_INTEGRATION_NG_ENDPOINT",
+      "replaceWithEnv": "NGAPPLICATION_INTEGRATION_NG_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.NGApplicationProd.md-meta.xml",
+      "stringToReplace": "QUOTA_INTEGRATION_NG_CLIENTSECRET",
+      "replaceWithEnv": "QUOTA_INTEGRATION_NG_CLIENTSECRET"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.NGApplicationProd.md-meta.xml",
+      "stringToReplace": "NGAPPLICATION_INTEGRATION_NG_XAPI",
+      "replaceWithEnv": "NGAPPLICATION_INTEGRATION_NG_XAPI"
+    },
+    {
+      "filename": "force-app/main/default/remoteSiteSettings/ZOLOZ_API.remoteSite-meta.xml",
+      "stringToReplace": "ZOLOZ_URL",
+      "replaceWithEnv": "ZOLOZ_URL"
+    },
+    {
+      "filename": "force-app/main/default/remoteSiteSettings/SingpassPersonURLPROD.remoteSite-meta.xml",
+      "stringToReplace": "SINGPASS_URL",
+      "replaceWithEnv": "SINGPASS_URL"
+    },
+    {
+      "filename": "force-app/main/default/cspTrustedSites/singpass_nusPROD.cspTrustedSite-meta.xml",
+      "stringToReplace": "SINGPASS_TRUSTEDURLPROD",
+      "replaceWithEnv": "SINGPASS_TRUSTEDURLPROD"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Acknowledgement.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ACK_NG_ENDPOINT",
+      "replaceWithEnv": "ESB_INTEGRATION_ACK_NG_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Acknowledgement.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ACK_NG_APPKEY",
+      "replaceWithEnv": "ESB_INTEGRATION_ACK_NG_APPKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Acknowledgement.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ACK_NG_HASHKEY",
+      "replaceWithEnv": "ESB_INTEGRATION_ACK_NG_HASHKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration_Acknowledgement.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_ACK_NG_XECOLLSUBAPI",
+      "replaceWithEnv": "ESB_INTEGRATION_ACK_NG_XECOLLSUBAPI"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_NG_ENDPOINT",
+      "replaceWithEnv": "ESB_INTEGRATION_NG_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_NG_APPKEY",
+      "replaceWithEnv": "ESB_INTEGRATION_NG_APPKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_NG_HASHKEY",
+      "replaceWithEnv": "ESB_INTEGRATION_NG_HASHKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_NG_XECOLLSUBAPI",
+      "replaceWithEnv": "ESB_INTEGRATION_NG_XECOLLSUBAPI"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.ESB_Integration.md-meta.xml",
+      "stringToReplace": "ESB_INTEGRATION_NG_TRANSACTIONTYPE",
+      "replaceWithEnv": "ESB_INTEGRATION_NG_TRANSACTIONTYPE"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.Ecoll_Integration.md-meta.xml",
+      "stringToReplace": "ECOLL_INTEGRATION_NG_ENDPOINT",
+      "replaceWithEnv": "ECOLL_INTEGRATION_NG_ENDPOINT"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.Ecoll_Integration.md-meta.xml",
+      "stringToReplace": "ECOLL_INTEGRATION_NG_APPKEY",
+      "replaceWithEnv": "ECOLL_INTEGRATION_NG_APPKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.Ecoll_Integration.md-meta.xml",
+      "stringToReplace": "ECOLL_INTEGRATION_NG_HASHKEY",
+      "replaceWithEnv": "ECOLL_INTEGRATION_NG_HASHKEY"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.Ecoll_Integration.md-meta.xml",
+      "stringToReplace": "ECOLL_INTEGRATION_NG_XECOLLSUBAPI",
+      "replaceWithEnv": "ECOLL_INTEGRATION_NG_XECOLLSUBAPI"
+    },
+    {
+      "filename": "force-app/main/default/customMetadata/NusIntegrationUtils.Ecoll_Integration.md-meta.xml",
+      "stringToReplace": "ECOLL_INTEGRATION_NG_TRANSACTIONTYPE",
+      "replaceWithEnv": "ECOLL_INTEGRATION_NG_TRANSACTIONTYPE"
+   },
+   {
+
+      "filename": "force-app/main/default/workflows/Account.workflow-meta.xml",
+      "stringToReplace": "OrgWideAddress",
+      "replaceWithEnv": "OrgWideAddress" 
+    }
+  ],
+  "packageAliases": {
+        "Marketing Cloud": "04t6S000000pFgKQAU",
+        "OmniStudio": "04t4W000003ChsLQAS",
+        "Nebula Logger - Managed Package": "04t5Y0000015oPqQAI"
+    }
+}
