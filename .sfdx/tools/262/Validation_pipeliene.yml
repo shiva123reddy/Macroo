@@ -1,0 +1,52 @@
+name: Salesforce CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Salesforce CLI
+        run: |
+          npm install -g @salesforce/cli
+
+      - name: Generate delta hash
+        run: |
+          target_branch=${{ github.base_ref }}
+          git fetch origin $target_branch
+
+          update_hash=$(git merge-base HEAD origin/$target_branch)
+
+          echo "Delta base: $update_hash"
+
+          git diff $update_hash --name-only --no-renames --diff-filter=AM -- force-app/main/default > modified_components.txt
+
+          echo "update_hash=$update_hash" >> $GITHUB_ENV
+
+      - name: Authenticate Salesforce
+        run: |
+          echo "${{ secrets.SFDX_AUTH_TESTORG }}" > auth.txt
+          sf org login sfdx-url --sfdx-url-file auth.txt --alias TESTORG
+
+      - name: Show modified components
+        run: |
+          echo "Modified files:"
+          cat modified_components.txt
+
+      - name: Validate deployment
+        run: |
+          sf project deploy validate \
+            --source-dir force-app \
+            --test-level RunLocalTests \
+            --wait 30 \
+            --target-org TESTORG
